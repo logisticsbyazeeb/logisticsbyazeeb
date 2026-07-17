@@ -63,6 +63,7 @@
             border-radius: 8px; 
             border: 1px solid var(--border); 
         }
+        .card.full-width { grid-column: 1 / -1; }
         .card h3 { margin: 0 0 0.75rem 0; font-size: 1.25rem; color: var(--text-main); }
         .card p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
         
@@ -88,8 +89,11 @@
             transition: background 0.2s ease;
         }
         .btn:hover { background: var(--accent-hover); }
+        
+        .contact-section { border-top: 1px solid var(--border); padding-top: 3rem; }
         .contact-details p { margin: 0.5rem 0; color: var(--text-muted); }
         .contact-details strong { color: var(--text-main); }
+        .contact-btn { margin-top: 1.5rem; }
     </style>
 </head>
 <body>
@@ -114,7 +118,7 @@
                     <h3>Commodity Freight Engineering</h3>
                     <p>Synchronized road, sea, and air pipelines designed for high-value trade assets, including electronics and industrial building materials.</p>
                 </div>
-                <div class="card" style="grid-column: 1 / -1;">
+                <div class="card full-width">
                     <h3>Asset & Warehousing Strategy</h3>
                     <p>Flexible, high-efficiency cargo handling and storage frameworks in free zone corridors to keep inventory fluid and moving alongside market velocities.</p>
                 </div>
@@ -139,7 +143,7 @@
         </div>
 
         <!-- Contact Framework -->
-        <div class="section" style="border-top: 1px solid var(--border); padding-top: 3rem;">
+        <div class="section contact-section">
             <h2>Secure Your Logistics Pipeline</h2>
             <p style="color: var(--text-muted);">Let's discuss how to strip the operational friction, clearance delays, and hidden compliance overhead out of your distribution network.</p>
             <div class="contact-details" style="margin-top: 1.5rem;">
@@ -147,7 +151,7 @@
                 <p><strong>Direct Operational Line:</strong> +971 55 715 9767</p>
                 <p><strong>Regional Hub:</strong> South Zone 1, Jebel Ali Free Zone (JAFZA), Dubai, UAE</p>
             </div>
-            <a href="https://wa.me/971557159767" class="btn" style="margin-top: 1.5rem;">Message on WhatsApp</a>
+            <a href="https://wa.me/971557159767" class="btn contact-btn">Message on WhatsApp</a>
         </div>
 
     </div>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Azeeb | Experience & Track Record</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #10233F; --navy-deep: #0A1830; --paper: #EDE7D9; --ink: #1C1B17; --brass: #A97C3F; --teal: #2F5D5A; --stamp-red: #A83A2C;
+            --font-display: 'Oswald', sans-serif; --font-body: 'IBM Plex Sans', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.72rem; }
+        h2 { font-family: var(--font-display); text-transform: uppercase; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(16, 35, 63, 0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(169, 124, 63, 0.35); }
+        .nav-inner { max-width: 1080px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-mark { font-family: var(--font-display); color: var(--paper); font-size: 1.05rem; text-transform: lowercase; }
+        .nav-links { display: flex; gap: 28px; font-family: var(--font-mono); color: var(--paper); font-size: 0.75rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--brass); }
+        .declaration { padding: 140px 0 60px; background: var(--paper); }
+        .declaration .eyebrow { color: var(--teal); margin-bottom: 16px; }
+        .declaration p { font-size: clamp(1.1rem, 2vw, 1.5rem); max-width: 780px; }
+        .declaration p::first-letter { font-family: var(--font-display); font-size: 3.2rem; font-weight: 700; color: var(--stamp-red); float: left; line-height: 0.85; margin-right: 10px; }
+        .cargo { padding: 20px 0 60px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .chip { font-family: var(--font-mono); font-size: 0.78rem; padding: 9px 16px; border: 1px solid var(--navy); color: var(--navy); }
+        .manifest { background: var(--navy); color: var(--paper); padding: 90px 0; }
+        .manifest .eyebrow { color: var(--brass); margin-bottom: 40px; }
+        .entry { display: grid; grid-template-columns: 70px 1fr; gap: 24px; padding: 32px 0; border-top: 1px solid rgba(169, 124, 63, 0.28); }
+        .entry-no { font-family: var(--font-mono); font-size: 1.3rem; color: var(--brass); font-weight: 600; }
+        .entry-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .entry-role { font-family: var(--font-display); font-size: 1.3rem; }
+        .entry-dates { font-family: var(--font-mono); font-size: 0.78rem; color: var(--brass); }
+        .entry li { font-size: 0.94rem; opacity: 0.88; padding-left: 18px; position: relative; margin-bottom: 8px; }
+        .entry li::before { content: '—'; position: absolute; left: 0; color: var(--brass); }
+        .education { padding: 90px 0 40px; }
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+        .edu-item { border-left: 2px solid var(--brass); padding-left: 20px; }
+        .seals-grid { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        .seal { width: 150px; height: 150px; border-radius: 50%; border: 3px double var(--stamp-red); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--stamp-red); font-family: var(--font-mono); padding: 14px; font-size: 0.72rem; text-transform: uppercase; font-weight: 600; }
+        .contact { background: var(--navy-deep); color: var(--paper); padding: 90px 0 60px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 40px; }
+        form { display: flex; flex-direction: column; gap: 14px; }
+        input, textarea { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(169, 124, 63, 0.4); color: var(--paper); padding: 12px 14px; }
+        .submit-btn { background: var(--brass); color: var(--navy-deep); border: none; padding: 14px 24px; font-weight: 600; cursor: pointer; font-family: var(--font-mono); text-transform: uppercase; }
+        .footer { background: var(--navy-deep); color: var(--paper); opacity: 0.55; text-align: center; font-family: var(--font-mono); font-size: 0.72rem; padding: 24px 0; border-top: 1px solid rgba(169, 124, 63, 0.25); }
+    </style>
+</head>
+<body>
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-mark"><a href="index.html">logistics<span>byazeeb</span></a></div>
+        <div class="nav-links">
+            <a href="services.html">Services</a>
+            <a href="about.html" style="color: var(--brass);">About Azeeb</a>
+        </div>
+    </div>
+</nav>
+
+<section class="declaration">
+    <div class="wrap">
+        <span class="eyebrow">Declaration</span>
+        <p>Supply chain and logistics professional with 6+ years managing end-to-end operations across free zone trade, customs compliance, and warehouse management in the UAE and India. Currently leading operations for AliZ Logistics FZE within JAFZA, overseeing import/export processes, customs documentation, and warehouse accuracy for high-volume trade. CSCP and CITLS certified, with a postgraduate degree in Logistics, Materials & Supply Chain Management.</p>
+    </div>
+</section>
+
+<section class="cargo">
+    <div class="wrap">
+        <span class="eyebrow" style="color:var(--teal)">Cargo Contents — Core Skills</span>
+        <div class="chips">
+            <span class="chip">Supply Chain Management</span>
+            <span class="chip">Import / Export Operations</span>
+            <span class="chip">Customs Regulations & Compliance</span>
+            <span class="chip">Negotiation</span>
+            <span class="chip">Supervisory Skills</span>
+            <span class="chip">Export Documentation</span>
+            <span class="chip">Warehouse & Inventory Management</span>
+        </div>
+    </div>
+</section>
+
+<section class="manifest">
+    <div class="wrap">
+        <span class="eyebrow">Professional Experience — Chronological Log</span>
+        <div class="entry">
+            <div class="entry-no">01</div>
+            <div>
+                <div class="entry-head">
+                    <div class="entry-role">Operations Lead (AliZ Logistics FZE · Dubai)</div>
+                    <div class="entry-dates">Feb 2024 — Present</div>
+                </div>
+                <ul>
+                    <li>Lead end-to-end logistics operations within JAFZA, ensuring 100% compliance with UAE customs regulations.</li>
+                    <li>Oversee import/export documentation, customs clearance, and supply chain coordination.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-no">02</div>
+            <div>
+                <div class="entry-head">
+                    <div class="entry-role">Logistics Operations Specialist (AliZ Logistics FZE)</div>
+                    <div class="entry-dates">Mar 2023 — Feb 2024</div>
+                </div>
+                <ul>
+                    <li>Managed daily warehouse and inventory cycles, maintaining high accuracy in stock reconciliation.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="education">
+    <div class="wrap">
+        <span class="eyebrow" style="color:var(--teal)">Education & Certifications</span>
+        <div class="edu-grid">
+            <div class="edu-item">
+                <h3>Postgraduate Degree — Logistics & SCM</h3>
+                <div class="school">Laurus Institute For Logistics</div>
+                <span class="dates" style="color:var(--stamp-red); font-size:0.8rem;">2018 — 2020</span>
+            </div>
+            <div class="edu-item">
+                <h3>BBA — Accounting and Finance</h3>
+                <div class="school">Periyar University</div>
+                <span class="dates" style="color:var(--stamp-red); font-size:0.8rem;">2015 — 2018</span>
+            </div>
+        </div>
+        <div class="seals-grid">
+            <div class="seal"><div>CITLS<br><span style="font-size:0.55rem; opacity:0.8;">Trade Logistics Specialist</span></div></div>
+            <div class="seal"><div>CSCP<br><span style="font-size:0.55rem; opacity:0.8;">Supply Chain Professional</span></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="wrap">
+        <span class="eyebrow" style="color:var(--brass)">Routing Details</span>
+        <h2 style="color:var(--paper)">Let's move something forward</h2>
+        <div class="contact-grid">
+            <div class="contact-details" style="color:var(--paper)">
+                <p style="margin-bottom:10px;"><a href="mailto:theazeebrahman@gmail.com">theazeebrahman@gmail.com</a></p>
+                <p style="margin-bottom:10px;"><a href="https://wa.me/971557159767">WhatsApp — +971 55 715 9767</a></p>
+                <p>South Zone 1, JAFZA, Dubai, UAE</p>
+            </div>
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
+                <input type="text" placeholder="Name" required style="margin-bottom:10px;">
+                <input type="email" placeholder="Email" required style="margin-bottom:10px;">
+                <textarea placeholder="Message" required style="margin-bottom:10px; min-height:80px;"></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<div class="footer">End of Manifest · © 2026 Azeeb Rahman</div>
+</body>
+</html>

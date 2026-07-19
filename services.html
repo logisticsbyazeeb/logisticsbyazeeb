@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | logistics by azeeb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #10233F; --navy-deep: #0A1830; --paper: #EDE7D9; --ink: #1C1B17; --brass: #A97C3F; --teal: #2F5D5A;
+            --font-display: 'Oswald', sans-serif; --font-body: 'IBM Plex Sans', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.72rem; }
+        h2 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 20px; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(16, 35, 63, 0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(169, 124, 63, 0.35); }
+        .nav-inner { max-width: 1080px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-mark { font-family: var(--font-display); color: var(--paper); font-size: 1.05rem; text-transform: lowercase; }
+        .nav-links { display: flex; gap: 28px; font-family: var(--font-mono); color: var(--paper); font-size: 0.75rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--brass); }
+        .freelance { background: var(--teal); color: var(--paper); padding: 140px 0 90px; min-height: 100vh; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+        .service { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.25); padding: 30px; }
+        .service h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; color: var(--brass); }
+        .btn { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; padding: 14px 28px; background: var(--brass); color: var(--navy-deep); font-weight: 600; display: inline-block; }
+    </style>
+</head>
+<body>
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-mark"><a href="index.html">logistics<span>byazeeb</span></a></div>
+        <div class="nav-links">
+            <a href="services.html" style="color: var(--brass);">Services</a>
+            <a href="about.html">About Azeeb</a>
+        </div>
+    </div>
+</nav>
+<section class="freelance">
+    <div class="wrap">
+        <span class="eyebrow">Core Capabilities</span>
+        <h2>High-Velocity Supply Chain Solutions</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Customs & JAFZA Mastery</h3>
+                <p>Advanced tariff validations, complex HS code restructures, and error-free declarations to completely bypass systemic portal roadblocks and costly port delays.</p>
+            </div>
+            <div class="service">
+                <h3>Import / Export Documentation Review</h3>
+                <p>Audit and verification of shipping parameters, free zone metrics, bills of lading, and multi-modal declarations prior to submission.</p>
+            </div>
+            <div class="service">
+                <h3>Customs Compliance Audits</h3>
+                <p>Process engineering to systematically isolate compliance bottlenecks and structurally eliminate operational clearance delays.</p>
+            </div>
+            <div class="service">
+                <h3>Asset & Warehousing Strategy</h3>
+                <p>Flexible, high-efficiency cargo handling and storage frameworks in free zone corridors to optimize turnaround metrics.</p>
+            </div>
+        </div>
+        <a href="about.html#contact" class="btn">Initiate Project Routing</a>
+    </div>
+</section>
+</body>
+</html>

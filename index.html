@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Doc Expert | Enterprise Trade & Documentation Services</title>
+  <title>The Doc Expert | Enterprise Trade & Documentation</title>
   <style>
     /* Reset & Base Styles */
     * {
@@ -13,15 +13,16 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     body {
-      background-color: #ffffff;
+      background-color: #f8fafc;
       color: #0f172a;
       line-height: 1.6;
     }
 
-    /* Header & Navigation Styles */
+    /* Modern Dark Translucent Header */
     .site-header {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
@@ -37,29 +38,22 @@
     .brand-logo {
       font-size: 1.25rem;
       font-weight: 800;
-      color: #0f172a;
+      color: #ffffff;
       text-decoration: none;
       text-transform: lowercase;
       letter-spacing: -0.5px;
     }
-    .logo-accent {
-      color: #2563eb;
-    }
-    .main-nav {
-      display: flex;
-      gap: 2rem;
-    }
+    .logo-accent { color: #38bdf8; }
+    .main-nav { display: flex; gap: 2rem; }
     .nav-link {
-      color: #475569;
+      color: #cbd5e1;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-link:hover {
-      color: #2563eb;
-    }
+    .nav-link:hover { color: #38bdf8; }
     .cta-button {
-      background: #0f172a;
+      background: #2563eb;
       color: #ffffff;
       padding: 0.6rem 1.25rem;
       border-radius: 6px;
@@ -68,48 +62,51 @@
       font-size: 0.9rem;
       transition: background 0.2s;
     }
-    .cta-button:hover {
-      background: #2563eb;
-    }
+    .cta-button:hover { background: #1d4ed8; }
 
-    /* Hero Section Styles */
+    /* Pinterest-Inspired Maritime Hero Section */
     .hero-section {
-      padding: 5rem 1.5rem;
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-      text-align: center;
+      position: relative;
+      padding: 8rem 1.5rem 6rem;
+      background: linear-gradient(180deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
     }
     .hero-container {
-      max-width: 800px;
+      max-width: 1100px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
     }
     .badge {
       display: inline-block;
-      background: #e0e7ff;
-      color: #3730a3;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
       padding: 0.4rem 1rem;
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 1rem;
     }
-    .hero-section h1 {
-      font-size: 2.75rem;
-      color: #0f172a;
-      margin: 1.5rem 0 1rem;
+    .hero-text h1 {
+      font-size: 2.8rem;
       line-height: 1.2;
+      margin-bottom: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
     }
-    .hero-section p {
+    .hero-text p {
       font-size: 1.15rem;
-      color: #64748b;
-      line-height: 1.6;
+      color: #94a3b8;
       margin-bottom: 2rem;
+      line-height: 1.6;
     }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-    }
+    .hero-actions { display: flex; gap: 1rem; }
     .btn-primary {
       background: #2563eb;
       color: white;
@@ -119,63 +116,98 @@
       font-weight: 600;
       transition: background 0.2s;
     }
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
+    .btn-primary:hover { background: #1d4ed8; }
     .btn-secondary {
-      background: #f1f5f9;
-      color: #0f172a;
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
       padding: 0.8rem 1.75rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
       transition: background 0.2s;
     }
-    .btn-secondary:hover {
-      background: #e2e8f0;
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+    /* Floating Stats Bar (Inspired by Pinterest Reference) */
+    .stats-section {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 2.5rem 1.5rem;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2.2rem;
+      color: #2563eb;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+    .stat-item p {
+      color: #64748b;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    /* Value Banner Styles */
-    .value-banner {
-      background: #0f172a;
-      color: white;
-      padding: 4rem 1.5rem;
-    }
-    .value-container {
+    /* Clean Card Section */
+    .features-section {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 { font-size: 2.2rem; color: #0f172a; }
+    .section-title p { color: #64748b; font-size: 1.05rem; }
+
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-    .value-item h3 {
-      color: #60a5fa;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 2.5rem;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .value-item p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      line-height: 1.5;
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
     }
+    .feature-card h3 { color: #0f172a; margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .feature-card p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
-    /* Mobile Responsive Adjustments */
-    @media (max-width: 640px) {
-      .hero-section h1 {
-        font-size: 2rem;
-      }
-      .main-nav {
-        gap: 1rem;
-      }
-      .hero-actions {
-        flex-direction: column;
-      }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-text h1 { font-size: 2.1rem; }
+      .stats-section { margin-top: 2rem; border-radius: 8px; }
+      .main-nav { gap: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Site Navigation Header -->
+  <!-- Navigation Bar -->
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
@@ -186,37 +218,62 @@
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">About</a>
       </nav>
-      <a href="about.html" class="cta-button">Talk to an Expert</a>
+      <a href="about.html" class="cta-button">Request an Opinion</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Maritime Hero Section -->
   <section class="hero-section">
     <div class="hero-container">
-      <span class="badge">Compliance & Trade Operations</span>
-      <h1>Enterprise Documentation Services Without Agency Overhead</h1>
-      <p>Comprehensive trade documentation, free zone clearance, and regulatory compliance tailored for businesses operating in JAFZA and across the UAE.</p>
-      <div class="hero-actions">
-        <a href="services.html" class="btn-primary">Explore Services</a>
-        <a href="about.html" class="btn-secondary">Why Choose Us</a>
+      <div class="hero-text">
+        <span class="badge">Trade & Customs Operations</span>
+        <h1>Precision Trade Documentation & JAFZA Compliance</h1>
+        <p>Eliminate demurrage risks and clearance bottlenecks. Senior-level execution for businesses moving cargo across free zones and UAE mainland ports.</p>
+        <div class="hero-actions">
+          <a href="about.html" class="btn-primary">Request an Opinion</a>
+          <a href="services.html" class="btn-secondary">Explore Solutions</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Value Banner Section -->
-  <section class="value-banner">
-    <div class="value-container">
-      <div class="value-item">
-        <h3>Senior Level Expertise</h3>
-        <p>Direct handling by experienced specialists—no junior account managers handling your critical files.</p>
+  <!-- Floating Stats Highlights -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Compliance Accuracy</p>
       </div>
-      <div class="value-item">
-        <h3>Lean Pricing Model</h3>
-        <p>Zero agency markup. Get enterprise-grade clearance and document preparation at fair, competitive rates.</p>
+      <div class="stat-item">
+        <h3>JAFZA</h3>
+        <p>Free Zone Specialist</p>
       </div>
-      <div class="value-item">
-        <h3>Fast Turnaround</h3>
-        <p>Agile, direct processes built specifically to streamline JAFZA and UAE Mainland approvals smoothly.</p>
+      <div class="stat-item">
+        <h3>0%</h3>
+        <p>Agency Overhead Markup</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section">
+    <div class="section-title">
+      <h2>Agile Logistics & Compliance Operations</h2>
+      <p>Direct expert-led execution tailored to your specific trade requirements.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Free Zone Clearance</h3>
+        <p>Streamlined transfers between JAFZA, surrounding free zone territories, and UAE local mainland markets.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Document Auditing</h3>
+        <p>Rapid review of trade invoices, bills of entry, and origin certificates to prevent delays at customs checkpoint controls.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Lean Execution</h3>
+        <p>Direct specialization with zero agency bloat, delivering fast turnaround times at fair competitive rates.</p>
       </div>
     </div>
   </section>

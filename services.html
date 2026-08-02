@@ -8,7 +8,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
 
-    /* Header */
     .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
     .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
@@ -18,7 +17,6 @@
     .nav-link:hover { color: #38bdf8; }
     .cta-button { background: #2563eb; color: #fff; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; }
 
-    /* Services Grid */
     .services-section { max-width: 1100px; margin: 4rem auto; padding: 0 1.5rem; }
     .section-title { text-align: center; margin-bottom: 3rem; }
     .section-title h1 { font-size: 2.5rem; color: #0f172a; margin-bottom: 0.5rem; }
@@ -29,7 +27,6 @@
     .card-btn { background: #2563eb; color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-align: center; transition: background 0.2s; }
     .card-btn:hover { background: #1d4ed8; }
 
-    /* Modal Form */
     .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
     .modal.active { display: flex; }
     .modal-content { background: #fff; padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 500px; position: relative; }
@@ -56,7 +53,7 @@
 
   <section class="services-section">
     <div class="section-title">
-      <h1>All Logistics & Trade Services</h1>
+      <h1>All Logistics &amp; Trade Services</h1>
       <p>Select any service to launch a customized quote request.</p>
     </div>
 
@@ -135,10 +132,9 @@
     </div>
   </section>
 
-  <!-- Modal Form -->
   <div class="modal" id="quoteModal">
     <div class="modal-content">
-      <button class="close-btn" onclick="closeQuoteForm()">&times;</button>
+      <button class="close-btn" onclick="closeQuoteForm()">X</button>
       <h2 style="margin-bottom: 0.5rem;">Request a Quote</h2>
       <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the details below and an expert will review your requirements.</p>
       <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">

@@ -5,173 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | The Doc Expert</title>
   <style>
-    /* Reset & Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: #f8fafc;
-      color: #0f172a;
-      line-height: 1.6;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
 
-    /* Modern Dark Translucent Header */
-    .site-header {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand-logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #ffffff;
-      text-decoration: none;
-      text-transform: lowercase;
-      letter-spacing: -0.5px;
-    }
+    /* Header */
+    .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
     .logo-accent { color: #38bdf8; }
     .main-nav { display: flex; gap: 2rem; }
-    .nav-link {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 500; }
     .nav-link:hover { color: #38bdf8; }
-    .cta-button {
-      background: #2563eb;
-      color: #ffffff;
-      padding: 0.6rem 1.25rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .cta-button:hover { background: #1d4ed8; }
+    .cta-button { background: #2563eb; color: #fff; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; }
 
-    /* About Page Layout */
-    .about-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem;
-    }
-    .about-container {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
+    /* About Content */
+    .about-section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
+    .about-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center; }
+    .sub-heading { color: #2563eb; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; }
+    .about-text h1 { font-size: 2.4rem; color: #0f172a; margin: 0.75rem 0 1.25rem; line-height: 1.25; font-weight: 800; }
+    .about-text p { color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem; }
 
-    .sub-heading {
-      color: #2563eb;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-    }
-    .about-text h1 {
-      font-size: 2.4rem;
-      color: #0f172a;
-      margin: 0.75rem 0 1.25rem;
-      line-height: 1.25;
-      font-weight: 800;
-    }
-    .about-text p {
-      color: #475569;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
+    .about-stats-card { background: #ffffff; border: 1px solid #e2e8f0; padding: 2.5rem 2rem; border-radius: 10px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+    .about-stats-card h3 { font-size: 1.3rem; color: #0f172a; margin-bottom: 1.5rem; }
+    .comparison-list { list-style: none; padding: 0; }
+    .comparison-list li { margin-bottom: 1.25rem; border-bottom: 1px dashed #cbd5e1; padding-bottom: 1rem; }
+    .comparison-list li:last-child { border-bottom: none; }
+    .comparison-list strong { display: block; color: #0f172a; font-size: 1.05rem; }
+    .comparison-list span { font-size: 0.92rem; color: #64748b; }
 
-    /* Comparison Box */
-    .about-stats-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 2.5rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-    }
-    .about-stats-card h3 {
-      font-size: 1.3rem;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
-    .comparison-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .comparison-list li {
-      margin-bottom: 1.25rem;
-      border-bottom: 1px dashed #cbd5e1;
-      padding-bottom: 1rem;
-    }
-    .comparison-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .comparison-list strong {
-      display: block;
-      color: #0f172a;
-      font-size: 1.05rem;
-      margin-bottom: 0.25rem;
-    }
-    .comparison-list span {
-      font-size: 0.92rem;
-      color: #64748b;
-    }
+    /* Modal Form */
+    .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
+    .modal.active { display: flex; }
+    .modal-content { background: #fff; padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 500px; position: relative; }
+    .close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; border: none; background: none; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; }
+    .submit-btn { width: 100%; background: #2563eb; color: white; padding: 0.8rem; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
 
-    /* Mobile Adjustments */
-    @media (max-width: 768px) {
-      .about-section { padding: 3rem 1rem; }
-      .about-container { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-text h1 { font-size: 1.85rem; }
-      .main-nav { gap: 1rem; }
-    }
+    @media (max-width: 768px) { .about-container { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <header class="site-header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo">
-        <span class="logo-accent">the doc</span> expert
-      </a>
+      <a href="index.html" class="brand-logo"><span class="logo-accent">the doc</span> expert</a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">About</a>
       </nav>
-      <a href="about.html" class="cta-button">Request an Opinion</a>
+      <button class="cta-button" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
     </div>
   </header>
 
-  <!-- Main About Section -->
   <section class="about-section">
     <div class="about-container">
       <div class="about-text">
         <span class="sub-heading">The Agile Advantage</span>
-        <h1>Enterprise Documentation Expertise Without Big-Agency Fees</h1>
-        <p><strong>The Doc Expert</strong> was founded to provide trade and logistics compliance without the bloated retainers charged by large agencies.</p>
-        <p>Led directly by specialist <strong>Azeeb</strong>, our lean operational model ensures every file is reviewed with precision and submitted quickly—giving your business direct access to senior expertise while keeping your operational costs low.</p>
+        <h1>Enterprise Documentation & Logistics Solutions</h1>
+        <p><strong>The Doc Expert</strong> was built to provide direct, reliable trade clearance and warehousing execution without big-agency markups.</p>
+        <p>Led directly by specialist <strong>Azeeb</strong>, our lean operational network handles complex JAFZA clearances, excise processing, warehousing, and freight forwarding smoothly and cost-effectively.</p>
+        <button class="cta-button" style="padding: 0.8rem 1.75rem; font-size: 1rem;" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
       </div>
 
       <div class="about-stats-card">
@@ -179,20 +75,69 @@
         <ul class="comparison-list">
           <li>
             <strong>Direct Senior Execution</strong>
-            <span>Your documentation is managed directly by a specialist, not passed down to junior staff.</span>
+            <span>Your files and cargo are managed directly by senior specialists.</span>
           </li>
           <li>
-            <strong>Lean Cost Structure</strong>
-            <span>Zero corporate overhead means enterprise quality at competitive, cost-effective rates.</span>
+            <strong>Lean Cost Advantage</strong>
+            <span>Lower pricing than big agencies through efficient, direct execution.</span>
           </li>
           <li>
-            <strong>Local UAE Expertise</strong>
-            <span>Deep operational knowledge of JAFZA free zone, customs clearance, and mainland procedures.</span>
+            <strong>Complete UAE Coverage</strong>
+            <span>Expertise across all UAE ports, JAFZA free zone, and FTA requirements.</span>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Modal Form -->
+  <div class="modal" id="quoteModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeQuoteForm()">&times;</button>
+      <h2 style="margin-bottom: 0.5rem;">Request a Quote</h2>
+      <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the details below and an expert will review your requirements.</p>
+      <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="name@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Select Service</label>
+          <select id="serviceSelect">
+            <option value="General Warehousing">General Warehousing</option>
+            <option value="Cargo Handling">Cargo Handling</option>
+            <option value="Sea and Air Freight">Sea and Air Freight</option>
+            <option value="Land Transportation">Land Transportation</option>
+            <option value="FTA Clearance Services">FTA Clearance Services</option>
+            <option value="Tobacco and Excise Products">Tobacco and Excise Products</option>
+            <option value="Courier Shipping">Courier Shipping</option>
+            <option value="Packing and Labeling">Packing and Labeling</option>
+            <option value="Transshipment">Transshipment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message / Requirements</label>
+          <textarea rows="3" placeholder="Provide details about cargo size, dates, or documentation..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Quote Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openQuoteForm(serviceName) {
+      document.getElementById('quoteModal').classList.add('active');
+      if(serviceName) {
+        document.getElementById('serviceSelect').value = serviceName;
+      }
+    }
+    function closeQuoteForm() {
+      document.getElementById('quoteModal').classList.remove('active');
+    }
+  </script>
 </body>
 </html>

@@ -8,7 +8,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
 
-    /* Header */
     .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
     .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
@@ -18,14 +17,12 @@
     .nav-link:hover { color: #38bdf8; }
     .cta-button { background: #2563eb; color: #fff; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; }
 
-    /* Hero */
     .hero-section { position: relative; padding: 7rem 1.5rem 5rem; background: linear-gradient(180deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover; color: #fff; text-align: center; }
     .hero-container { max-width: 800px; margin: 0 auto; }
     .badge { display: inline-block; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
     .hero-section h1 { font-size: 2.75rem; margin-bottom: 1.25rem; font-weight: 800; }
     .hero-section p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 2rem; }
 
-    /* Services Grid */
     .services-section { max-width: 1100px; margin: 4rem auto; padding: 0 1.5rem; }
     .section-title { text-align: center; margin-bottom: 3rem; }
     .section-title h2 { font-size: 2.2rem; color: #0f172a; }
@@ -36,7 +33,6 @@
     .card-btn { background: #f1f5f9; color: #0f172a; border: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.2s; }
     .card-btn:hover { background: #2563eb; color: #fff; }
 
-    /* Modal Form */
     .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
     .modal.active { display: flex; }
     .modal-content { background: #fff; padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 500px; position: relative; }
@@ -63,7 +59,7 @@
 
   <section class="hero-section">
     <div class="hero-container">
-      <span class="badge">Comprehensive Logistics & Trade</span>
+      <span class="badge">Comprehensive Logistics &amp; Trade</span>
       <h1>Enterprise Operations Without Agency Markup</h1>
       <p>Direct expert-led clearance, warehousing, and freight operations across JAFZA and UAE Mainland.</p>
       <button class="cta-button" style="font-size: 1.1rem; padding: 0.8rem 2rem;" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
@@ -103,10 +99,9 @@
     </div>
   </section>
 
-  <!-- Quote Modal Form -->
   <div class="modal" id="quoteModal">
     <div class="modal-content">
-      <button class="close-btn" onclick="closeQuoteForm()">&times;</button>
+      <button class="close-btn" onclick="closeQuoteForm()">X</button>
       <h2 style="margin-bottom: 0.5rem;">Request a Quote</h2>
       <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the details below and an expert will review your requirements.</p>
       <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">

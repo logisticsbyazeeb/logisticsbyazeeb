@@ -5,188 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | The Doc Expert</title>
   <style>
-    /* Reset & Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: #f8fafc;
-      color: #0f172a;
-      line-height: 1.6;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
 
-    /* Modern Dark Translucent Header */
-    .site-header {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand-logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #ffffff;
-      text-decoration: none;
-      text-transform: lowercase;
-      letter-spacing: -0.5px;
-    }
+    /* Header */
+    .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
     .logo-accent { color: #38bdf8; }
     .main-nav { display: flex; gap: 2rem; }
-    .nav-link {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 500; }
     .nav-link:hover { color: #38bdf8; }
-    .cta-button {
-      background: #2563eb;
-      color: #ffffff;
-      padding: 0.6rem 1.25rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .cta-button:hover { background: #1d4ed8; }
+    .cta-button { background: #2563eb; color: #fff; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; }
 
-    /* Services Page Layout */
-    .services-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem;
-    }
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-    .section-header h1 {
-      font-size: 2.5rem;
-      color: #0f172a;
-      margin-bottom: 1rem;
-      font-weight: 800;
-    }
-    .section-header p {
-      color: #64748b;
-      font-size: 1.1rem;
-    }
+    /* Services Grid */
+    .services-section { max-width: 1100px; margin: 4rem auto; padding: 0 1.5rem; }
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h1 { font-size: 2.5rem; color: #0f172a; margin-bottom: 0.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .card { background: #fff; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card h3 { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.5rem; }
+    .card p { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .card-btn { background: #2563eb; color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-align: center; transition: background 0.2s; }
+    .card-btn:hover { background: #1d4ed8; }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 2.5rem 2rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
-      border-color: #cbd5e1;
-    }
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      background: #eff6ff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .service-card h3 {
-      font-size: 1.35rem;
-      color: #0f172a;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    .service-card p {
-      color: #64748b;
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    /* Mobile Adjustments */
-    @media (max-width: 640px) {
-      .services-section { padding: 3rem 1rem; }
-      .section-header h1 { font-size: 2rem; }
-      .main-nav { gap: 1rem; }
-    }
+    /* Modal Form */
+    .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
+    .modal.active { display: flex; }
+    .modal-content { background: #fff; padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 500px; position: relative; }
+    .close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; border: none; background: none; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; }
+    .submit-btn { width: 100%; background: #2563eb; color: white; padding: 0.8rem; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <header class="site-header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo">
-        <span class="logo-accent">the doc</span> expert
-      </a>
+      <a href="index.html" class="brand-logo"><span class="logo-accent">the doc</span> expert</a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">About</a>
       </nav>
-      <a href="about.html" class="cta-button">Request an Opinion</a>
+      <button class="cta-button" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
     </div>
   </header>
 
-  <!-- Main Services Section -->
   <section class="services-section">
-    <div class="section-header">
-      <h1>Specialized Trade & Clearance Solutions</h1>
-      <p>Direct, compliant, and cost-effective services designed to keep your UAE logistics and documentation moving without port delays.</p>
+    <div class="section-title">
+      <h1>All Logistics & Trade Services</h1>
+      <p>Select any service to launch a customized quote request.</p>
     </div>
 
-    <div class="services-grid">
-      <!-- Service 1 -->
-      <div class="service-card">
-        <div class="card-icon">
-          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <h3>General Warehousing</h3>
+          <p>Secure storage facilities with full inventory control and free zone compliance.</p>
         </div>
-        <h3>JAFZA to Mainland Clearance</h3>
-        <p>Seamless transfer documentation and regulatory management for moving cargo smoothly between free zone boundaries and local UAE markets.</p>
+        <button class="card-btn" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
       </div>
 
-      <!-- Service 2 -->
-      <div class="service-card">
-        <div class="card-icon">
-          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+      <div class="card">
+        <div>
+          <h3>Cargo Handling</h3>
+          <p>Expert loading, offloading, devanning, and cross-docking operations.</p>
         </div>
-        <h3>Customs & Trade Compliance</h3>
-        <p>End-to-end verification of bills of entry, harmonized system (HS) code classification, and official government portal approvals.</p>
+        <button class="card-btn" onclick="openQuoteForm('Cargo Handling')">Request a Quote</button>
       </div>
 
-      <!-- Service 3 -->
-      <div class="service-card">
-        <div class="card-icon">
-          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      <div class="card">
+        <div>
+          <h3>Sea and Air Freight</h3>
+          <p>Global sea container shipments and fast-track air freight dispatch.</p>
         </div>
-        <h3>Fast-Track Document Verification</h3>
-        <p>Rapid audit of trade invoices, certificates of origin, and import/export documentation to avoid demurrage and administrative penalties.</p>
+        <button class="card-btn" onclick="openQuoteForm('Sea and Air Freight')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Land Transportation</h3>
+          <p>Reliable local and cross-border trucking throughout the GCC and UAE mainland.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('Land Transportation')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>FTA Clearance Services</h3>
+          <p>Federal Tax Authority declarations, customs duty clearing, and tax compliance.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('FTA Clearance Services')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Tobacco and Excise Products</h3>
+          <p>Specialized clearance, digital tax stamps, and regulatory excise approvals.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('Tobacco and Excise Products')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Courier Shipping</h3>
+          <p>Express international and domestic parcel documentation and door-to-door delivery.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('Courier Shipping')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Packing and Labeling</h3>
+          <p>Custom palletizing, export packaging, barcode compliance, and localized relabeling.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('Packing and Labeling')">Request a Quote</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Transshipment</h3>
+          <p>Seamless vessel-to-vessel transfers and re-export clearance documentation.</p>
+        </div>
+        <button class="card-btn" onclick="openQuoteForm('Transshipment')">Request a Quote</button>
       </div>
     </div>
   </section>
 
+  <!-- Modal Form -->
+  <div class="modal" id="quoteModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeQuoteForm()">&times;</button>
+      <h2 style="margin-bottom: 0.5rem;">Request a Quote</h2>
+      <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the details below and an expert will review your requirements.</p>
+      <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="name@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Select Service</label>
+          <select id="serviceSelect">
+            <option value="General Warehousing">General Warehousing</option>
+            <option value="Cargo Handling">Cargo Handling</option>
+            <option value="Sea and Air Freight">Sea and Air Freight</option>
+            <option value="Land Transportation">Land Transportation</option>
+            <option value="FTA Clearance Services">FTA Clearance Services</option>
+            <option value="Tobacco and Excise Products">Tobacco and Excise Products</option>
+            <option value="Courier Shipping">Courier Shipping</option>
+            <option value="Packing and Labeling">Packing and Labeling</option>
+            <option value="Transshipment">Transshipment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message / Requirements</label>
+          <textarea rows="3" placeholder="Provide details about cargo size, dates, or documentation..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Quote Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openQuoteForm(serviceName) {
+      document.getElementById('quoteModal').classList.add('active');
+      if(serviceName) {
+        document.getElementById('serviceSelect').value = serviceName;
+      }
+    }
+    function closeQuoteForm() {
+      document.getElementById('quoteModal').classList.remove('active');
+    }
+  </script>
 </body>
 </html>

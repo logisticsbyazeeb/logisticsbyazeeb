@@ -4,17 +4,197 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Doc Expert | Enterprise Trade & Documentation Services</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation Styles */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-decoration: none;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+    .logo-accent {
+      color: #2563eb;
+    }
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    .cta-button {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .cta-button:hover {
+      background: #2563eb;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      text-align: center;
+    }
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hero-section h1 {
+      font-size: 2.75rem;
+      color: #0f172a;
+      margin: 1.5rem 0 1rem;
+      line-height: 1.2;
+    }
+    .hero-section p {
+      font-size: 1.15rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* Value Banner Styles */
+    .value-banner {
+      background: #0f172a;
+      color: white;
+      padding: 4rem 1.5rem;
+    }
+    .value-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .value-item h3 {
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .value-item p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 640px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .main-nav {
+        gap: 1rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Insert Header Here -->
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-accent">the doc</span> expert
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="about.html" class="cta-button">Talk to an Expert</a>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-container">
       <span class="badge">Compliance & Trade Operations</span>
-      <h1>Enterprise Documentation Services without Corporate Overhead</h1>
+      <h1>Enterprise Documentation Services Without Agency Overhead</h1>
       <p>Comprehensive trade documentation, free zone clearance, and regulatory compliance tailored for businesses operating in JAFZA and across the UAE.</p>
       <div class="hero-actions">
         <a href="services.html" class="btn-primary">Explore Services</a>
@@ -23,74 +203,23 @@
     </div>
   </section>
 
-  <!-- Value Prop Banner -->
+  <!-- Value Banner Section -->
   <section class="value-banner">
     <div class="value-container">
       <div class="value-item">
-        <h3>Senior Expertise</h3>
-        <p>Direct handling by specialists, no junior account managers.</p>
+        <h3>Senior Level Expertise</h3>
+        <p>Direct handling by experienced specialists—no junior account managers handling your critical files.</p>
       </div>
       <div class="value-item">
-        <h3>Lean Pricing</h3>
-        <p>Zero corporate markup. Premium execution at fair market rates.</p>
+        <h3>Lean Pricing Model</h3>
+        <p>Zero agency markup. Get enterprise-grade clearance and document preparation at fair, competitive rates.</p>
       </div>
       <div class="value-item">
         <h3>Fast Turnaround</h3>
-        <p>Agile processes designed to clear JAFZA & Mainland hurdles quickly.</p>
+        <p>Agile, direct processes built specifically to streamline JAFZA and UAE Mainland approvals smoothly.</p>
       </div>
     </div>
   </section>
 
 </body>
 </html>
-
-<style>
-  .hero-section {
-    padding: 5rem 1.5rem;
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    text-align: center;
-  }
-  .hero-container { max-width: 800px; margin: 0 auto; }
-  .badge {
-    background: #e0e7ff;
-    color: #3730a3;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .hero-section h1 {
-    font-size: 2.75rem;
-    color: #0f172a;
-    margin: 1.5rem 0 1rem;
-    line-height: 1.2;
-  }
-  .hero-section p {
-    font-size: 1.15rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-  .hero-actions { display: flex; gap: 1rem; justify-content: center; }
-  .btn-primary {
-    background: #2563eb; color: white; padding: 0.8rem 1.75rem;
-    border-radius: 6px; text-decoration: none; font-weight: 600;
-  }
-  .btn-secondary {
-    background: #f1f5f9; color: #0f172a; padding: 0.8rem 1.75rem;
-    border-radius: 6px; text-decoration: none; font-weight: 600;
-  }
-
-  .value-banner {
-    background: #0f172a; color: white; padding: 3rem 1.5rem;
-  }
-  .value-container {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  .value-item h3 { color: #60a5fa; margin-bottom: 0.5rem; font-size: 1.2rem; }
-  .value-item p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
-</style>

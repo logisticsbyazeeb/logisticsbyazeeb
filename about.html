@@ -1,205 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Azeeb | The Doc Expert</title>
-    <meta name="description" content="Learn about Azeeb Rahman — Operations Lead, Trade Compliance Specialist, and founder of The Doc Expert.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #F8FAFC;
-            --bg-surface: #FFFFFF;
-            --bg-subtle: #F1F5F9;
-            --border-color: #E2E8F0;
-            --border-hover: #CBD5E1;
-            
-            --navy-deep: #0F172A;
-            --blue-accent: #2563EB;
-            --blue-light: #EFF6FF;
-            --green-badge: #059669;
-            
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --text-muted: #64748B;
-            
-            --font-head: 'Space Grotesk', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07);
-            --shadow-lg: 0 10px 25px -3px rgb(15 23 42 / 0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--text-primary); background: var(--bg-primary); line-height: 1.6; }
-        a { color: inherit; text-decoration: none; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-
-        /* Nav */
-        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; color: var(--navy-deep); }
-        .nav-logo svg { width: 28px; height: 28px; color: var(--blue-accent); }
-        .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--blue-accent); }
-
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; transition: all 0.2s ease; border: none; cursor: pointer; }
-        .btn-primary { background: var(--navy-deep); color: #FFF; }
-        .btn-primary:hover { background: var(--blue-accent); }
-
-        /* Section Layout */
-        .about-section { padding: 150px 0 80px; }
-        .eyebrow { font-family: var(--font-head); font-size: 0.85rem; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 12px; }
-        .main-heading { font-family: var(--font-head); font-size: clamp(2.2rem, 4vw, 3rem); color: var(--navy-deep); letter-spacing: -0.02em; margin-bottom: 24px; }
-        .lead-p { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px; }
-
-        /* Timeline */
-        .timeline-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 40px; }
-        .timeline-title { font-family: var(--font-head); font-size: 1.35rem; color: var(--navy-deep); margin-bottom: 24px; font-weight: 700; }
-        .timeline-list { display: flex; flex-direction: column; gap: 28px; position: relative; padding-left: 20px; border-left: 2px solid var(--blue-accent); }
-        .timeline-item { position: relative; }
-        .timeline-item::before { content: ''; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--blue-accent); }
-        .timeline-date { font-size: 0.8rem; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
-        .timeline-role { font-family: var(--font-head); font-size: 1.1rem; color: var(--navy-deep); font-weight: 700; }
-        .timeline-desc { font-size: 0.92rem; color: var(--text-secondary); margin-top: 4px; }
-
-        /* Certifications & Skills */
-        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
-        .meta-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-sm); }
-        .meta-card h3 { font-family: var(--font-head); font-size: 1.1rem; color: var(--navy-deep); margin-bottom: 16px; font-weight: 700; }
-        .cert-tag { display: inline-block; background: var(--blue-light); color: var(--blue-accent); font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 6px; margin-right: 8px; margin-bottom: 8px; border: 1px solid rgba(37, 99, 235, 0.2); }
-
-        /* The Rule Callout */
-        .rule-box { background: var(--navy-deep); color: #FFF; border-radius: 16px; padding: 36px; margin-bottom: 80px; box-shadow: var(--shadow-md); }
-        .rule-box label { font-family: var(--font-head); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue-accent); font-weight: 700; display: block; margin-bottom: 8px; }
-        .rule-box p { font-size: 1.25rem; font-style: italic; color: #F1F5F9; font-weight: 500; line-height: 1.5; }
-
-        /* Contact */
-        .contact-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-sm); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy-deep); margin-bottom: 8px; }
-        .form-control { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); }
-        .form-control:focus { outline: none; border-color: var(--blue-accent); }
-
-        /* Footer */
-        .footer { background: var(--navy-deep); color: #94A3B8; padding: 40px 0; font-size: 0.9rem; }
-        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-logo { font-family: var(--font-head); color: #FFF; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | The Doc Expert</title>
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav class="nav">
-        <div class="container nav-inner">
-            <a href="index.html" class="nav-logo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                <span>the doc expert</span>
-            </a>
-            <div class="nav-links">
-                <a href="services.html">Services</a>
-                <a href="about.html" class="active">About Azeeb</a>
-                <a href="#contact" class="btn btn-primary">Get Consultation</a>
-            </div>
-        </div>
-    </nav>
+  <!-- Insert Header Here -->
 
-    <!-- Main About Content -->
-    <main class="about-section">
-        <div class="container">
-            <span class="eyebrow">About Azeeb Rahman</span>
-            <h1 class="main-heading">Who I Am & How I Reach The Finish Line</h1>
-            <p class="lead-p">
-                I am <strong>Azeeb Rahman</strong>—Operations Lead, Certified Trade Compliance Specialist (CSCP, CITLS), and founder of <strong>The Doc Expert</strong>. With over 6 years managing end-to-end free zone trade, customs legalities, and warehouse execution across the UAE and India, I turn regulatory delays into clean, on-time deliveries.
-            </p>
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <span class="sub-heading">The Agile Advantage</span>
+        <h2>Enterprise Logistics Expertise Without the Agency Markup</h2>
+        <p><strong>The Doc Expert</strong> was built to solve a simple industry problem: big agencies charge massive retainers for trade documentation while passing execution down to junior staff.</p>
+        <p>Led by specialist <strong>Azeeb</strong>, operating as an agile consultancy allows every account to get direct hands-on focus, fast clearance execution, and competitive rates that keep operating margins intact.</p>
+      </div>
 
-            <!-- Experience Log -->
-            <div class="timeline-card">
-                <h2 class="timeline-title">The Career Journey</h2>
-                <div class="timeline-list">
-                    <div class="timeline-item">
-                        <span class="timeline-date">Feb 2024 — Present</span>
-                        <div class="timeline-role">Operations Lead · AliZ Logistics FZE (JAFZA, Dubai)</div>
-                        <div class="timeline-desc">Leading end-to-end logistics operations in JAFZA, overseeing Mirsal II declarations, free zone clearance, ministry attestations, and 100% customs compliance.</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-date">Mar 2023 — Feb 2024</span>
-                        <div class="timeline-role">Logistics Operations Specialist · AliZ Logistics FZE</div>
-                        <div class="timeline-desc">Managed daily warehouse inventory cycles, stock reconciliation, and cross-border shipping documentation within Jebel Ali Free Zone.</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-date">2018 — 2020</span>
-                        <div class="timeline-role">Postgraduate Qualification in Logistics & SCM</div>
-                        <div class="timeline-desc">Completed specialized postgraduate degree at Laurus Institute for Logistics following a BBA in Accounting & Finance from Periyar University.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certs and Core Competencies -->
-            <div class="meta-grid">
-                <div class="meta-card">
-                    <h3>Professional Certifications</h3>
-                    <div>
-                        <span class="cert-tag">CSCP</span>
-                        <span class="cert-tag">CITLS</span>
-                        <span class="cert-tag">JAFZA Trade Expert</span>
-                    </div>
-                </div>
-                <div class="meta-card">
-                    <h3>Core Skills</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
-                        Trade Compliance · Mirsal II Customs · Free Zone Operations · Commercial Attestation · Inventory Audit · Supply Chain Management
-                    </p>
-                </div>
-            </div>
-
-            <!-- Execution Promise -->
-            <div class="rule-box">
-                <label>The Execution Rule</label>
-                <p>"No bottlenecks. No excuses. I will go to the absolute limit to ensure every document is cleared and every cargo is delivered on time."</p>
-            </div>
-
-            <!-- Direct Contact Form -->
-            <div id="contact" class="contact-card">
-                <span class="eyebrow">Direct Line</span>
-                <h2 style="font-family: var(--font-head); font-size: 1.8rem; color: var(--navy-deep); margin-bottom: 24px;">Send Azeeb a Message</h2>
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent to Azeeb!');">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email or WhatsApp Number</label>
-                        <input type="text" id="email" class="form-control" placeholder="name@company.com / +971..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="msg">Shipment or Document Details</label>
-                        <textarea id="msg" class="form-control" style="min-height: 100px;" placeholder="How can I assist your supply chain or clearances?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px;">Send Message &rarr;</button>
-                </form>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-logo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                <span>The Doc Expert</span>
-            </div>
-            <div>&copy; 2026 Azeeb Rahman · JAFZA, Dubai, UAE.</div>
-        </div>
-    </footer>
+      <div class="about-stats-card">
+        <h3>How We Compare</h3>
+        <ul class="comparison-list">
+          <li>
+            <strong>Direct Execution</strong>
+            <span>Your files are handled directly by Senior Trade Specialists.</span>
+          </li>
+          <li>
+            <strong>Lean Overhead</strong>
+            <span>No agency bloat means lower prices for high-volume clients.</span>
+          </li>
+          <li>
+            <strong>Local Expertise</strong>
+            <span>Deep knowledge of JAFZA, customs, and UAE mainland policies.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
+
+<style>
+  .about-section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
+  .about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .about-container { grid-template-columns: 1fr; }
+  }
+
+  .sub-heading { color: #2563eb; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; }
+  .about-text h2 { font-size: 2.2rem; color: #0f172a; margin: 0.75rem 0 1.25rem; line-height: 1.3; }
+  .about-text p { color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  .about-stats-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .about-stats-card h3 { font-size: 1.3rem; color: #0f172a; margin-bottom: 1.5rem; }
+  .comparison-list { list-style: none; padding: 0; margin: 0; }
+  .comparison-list li { margin-bottom: 1.25rem; border-bottom: 1px dashed #cbd5e1; padding-bottom: 1rem; }
+  .comparison-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .comparison-list strong { display: block; color: #0f172a; margin-bottom: 0.25rem; }
+  .comparison-list span { font-size: 0.9rem; color: #64748b; }
+</style>

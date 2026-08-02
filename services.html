@@ -4,81 +4,186 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | The Doc Expert</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation Styles */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-decoration: none;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+    .logo-accent { color: #2563eb; }
+    .main-nav { display: flex; gap: 2rem; }
+    .nav-link {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #2563eb; }
+    .cta-button {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .cta-button:hover { background: #2563eb; }
+
+    /* Services Page Styles */
+    .services-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .section-header h1 {
+      font-size: 2.5rem;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .section-header p {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -10px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: #eff6ff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .service-card h3 {
+      font-size: 1.35rem;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      color: #64748b;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 640px) {
+      .services-section { padding: 3rem 1rem; }
+      .section-header h1 { font-size: 2rem; }
+      .main-nav { gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Insert Header Here -->
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-accent">the doc</span> expert
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="about.html" class="cta-button">Talk to an Expert</a>
+    </div>
+  </header>
 
+  <!-- Main Services Section -->
   <section class="services-section">
     <div class="section-header">
-      <h2>Specialized Trade & Clearance Solutions</h2>
-      <p>Direct, compliant, and cost-effective services designed to keep your UAE logistics moving smoothly.</p>
+      <h1>Specialized Trade & Clearance Solutions</h1>
+      <p>Direct, compliant, and cost-effective services designed to keep your UAE logistics and documentation moving without port delays.</p>
     </div>
 
     <div class="services-grid">
       <!-- Service 1 -->
       <div class="service-card">
         <div class="card-icon">
-          <svg width="24" height="24" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         </div>
         <h3>JAFZA to Mainland Clearance</h3>
-        <p>Seamless transfer and documentation management for moving cargo between free zone territories and UAE local markets.</p>
+        <p>Seamless transfer documentation and regulatory management for moving cargo smoothly between free zone boundaries and local UAE markets.</p>
       </div>
 
       <!-- Service 2 -->
       <div class="service-card">
         <div class="card-icon">
-          <svg width="24" height="24" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
         </div>
         <h3>Customs & Trade Compliance</h3>
-        <p>End-to-end verification of bills of entry, harmonized system (HS) code classification, and regulatory approvals.</p>
+        <p>End-to-end verification of bills of entry, harmonized system (HS) code classification, and official government portal approvals.</p>
       </div>
 
       <!-- Service 3 -->
       <div class="service-card">
         <div class="card-icon">
-          <svg width="24" height="24" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <svg width="26" height="26" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
         </div>
         <h3>Fast-Track Document Verification</h3>
-        <p>Rapid review of trade invoices, certificates of origin, and import/export documentation to prevent costly port delays.</p>
+        <p>Rapid audit of trade invoices, certificates of origin, and import/export documentation to avoid demurrage and administrative penalties.</p>
       </div>
     </div>
   </section>
 
 </body>
 </html>
-
-<style>
-  .services-section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-  .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-header h2 { font-size: 2.2rem; color: #0f172a; margin-bottom: 0.75rem; }
-  .section-header p { color: #64748b; font-size: 1.1rem; }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 2rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px -10px rgba(0,0,0,0.08);
-    border-color: #cbd5e1;
-  }
-  .card-icon {
-    width: 48px; height: 48px;
-    background: #eff6ff;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.25rem;
-  }
-  .service-card h3 { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.75rem; }
-  .service-card p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
-</style>

@@ -8,7 +8,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
 
-    /* Header */
     .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
     .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
@@ -18,7 +17,6 @@
     .nav-link:hover { color: #38bdf8; }
     .cta-button { background: #2563eb; color: #fff; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; }
 
-    /* About Content */
     .about-section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
     .about-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center; }
     .sub-heading { color: #2563eb; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; }
@@ -33,7 +31,16 @@
     .comparison-list strong { display: block; color: #0f172a; font-size: 1.05rem; }
     .comparison-list span { font-size: 0.92rem; color: #64748b; }
 
-    /* Modal Form */
+    .site-footer { background: #0f172a; color: #94a3b8; padding: 4rem 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; }
+    .footer-col p, .footer-col a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; margin-bottom: 0.5rem; display: block; }
+    .footer-col a:hover { color: #38bdf8; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.85rem; color: #64748b; }
+
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .whatsapp-float:hover { background: #128c7e; }
+
     .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
     .modal.active { display: flex; }
     .modal-content { background: #fff; padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 500px; position: relative; }
@@ -50,12 +57,13 @@
 
   <header class="site-header">
     <div class="header-container">
-    <a href="index.html" class="brand-logo"><span class="logo-accent">thedoc</span>expert</a>
+      <a href="index.html" class="brand-logo"><span class="logo-accent">the doc</span> expert</a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">About</a>
       </nav>
+      <button class="cta-button" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
     </div>
   </header>
 
@@ -63,7 +71,7 @@
     <div class="about-container">
       <div class="about-text">
         <span class="sub-heading">The Agile Advantage</span>
-        <h1>Enterprise Documentation & Logistics Solutions</h1>
+        <h1>Enterprise Documentation &amp; Logistics Solutions</h1>
         <p><strong>The Doc Expert</strong> was built to provide direct, reliable trade clearance and warehousing execution without big-agency markups.</p>
         <p>Led directly by specialist <strong>Azeeb</strong>, our lean operational network handles complex JAFZA clearances, excise processing, warehousing, and freight forwarding smoothly and cost-effectively.</p>
         <button class="cta-button" style="padding: 0.8rem 1.75rem; font-size: 1rem;" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
@@ -89,10 +97,35 @@
     </div>
   </section>
 
-  <!-- Modal Form -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>The Doc Expert</h4>
+        <p>Precision trade documentation, JAFZA free zone operations, and logistics execution.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/971557159767" target="_blank">+971 55 715 9767</a></p>
+        <p><strong>Email:</strong> <a href="mailto:azeeb@thedocexpert.ae">azeeb@thedocexpert.ae</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Jebel Ali Free Zone (JAFZA)</p>
+        <p>Dubai, United Arab Emirates</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Doc Expert. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/971557159767" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    &#128172;
+  </a>
+
   <div class="modal" id="quoteModal">
     <div class="modal-content">
-      <button class="close-btn" onclick="closeQuoteForm()">&times;</button>
+      <button class="close-btn" onclick="closeQuoteForm()">X</button>
       <h2 style="margin-bottom: 0.5rem;">Request a Quote</h2>
       <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the details below and an expert will review your requirements.</p>
       <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">

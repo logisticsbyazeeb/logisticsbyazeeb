@@ -16,7 +16,7 @@
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
-    .preloader-logo { font-size: 2.2rem; font-weight: 800; color: #ffffff; text-transform: lowercase; animation: logoPulse 1.5s infinite ease-in-out; }
+    .preloader-logo { font-size: 2rem; font-weight: 800; color: #ffffff; text-transform: lowercase; animation: logoPulse 1.5s infinite ease-in-out; }
     .logo-accent { color: #f97316; }
     .loader-bar { width: 120px; height: 3px; background: rgba(255,255,255,0.1); margin-top: 1.5rem; border-radius: 3px; overflow: hidden; position: relative; }
     .loader-progress { width: 100%; height: 100%; background: #f97316; position: absolute; left: -100%; animation: loadingSlide 2s infinite ease-in-out; }
@@ -25,107 +25,130 @@
     @keyframes loadingSlide { 0% { left: -100%; } 50% { left: 0%; } 100% { left: 100%; } }
 
     /* HEADER */
-    .site-header { position: absolute; top: 0; left: 0; width: 100%; padding: 1.8rem 4rem; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-    .brand-logo { font-size: 1.6rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
-    .main-nav { display: flex; gap: 2.5rem; align-items: center; }
+    .site-header { 
+      position: absolute; top: 0; left: 0; width: 100%; 
+      padding: 1.5rem 2.5rem; z-index: 100; 
+      display: flex; justify-content: space-between; align-items: center; 
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .brand-logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; white-space: nowrap; }
+    .main-nav { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
     .nav-link { color: #e2e8f0; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-    .nav-link:hover { color: #f97316; }
-    .btn-orange { background: #f97316; color: #fff; padding: 0.75rem 1.6rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3); }
+    .nav-link:hover, .nav-link.active { color: #f97316; }
+    
+    /* UNIFIED ORANGE BUTTONS */
+    .btn-orange { 
+      background: #f97316; 
+      color: #fff; 
+      padding: 0.7rem 1.4rem; 
+      border-radius: 30px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      border: none; 
+      cursor: pointer; 
+      transition: all 0.2s; 
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3); 
+      white-space: nowrap; 
+      display: inline-block;
+      text-align: center;
+    }
     .btn-orange:hover { background: #ea580c; transform: translateY(-1px); }
 
-    /* HERO SECTION */
+    /* HERO SECTION WITH CONTAINER SHIP BACKGROUND */
     .hero-container {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 7rem 4rem 4rem;
-      background: linear-gradient(90deg, rgba(11, 19, 41, 0.85) 0%, rgba(11, 19, 41, 0.4) 50%, rgba(11, 19, 41, 0.1) 100%),
-                  url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 8rem 2.5rem 4rem;
+      background: linear-gradient(90deg, rgba(11, 19, 41, 0.92) 0%, rgba(11, 19, 41, 0.65) 50%, rgba(11, 19, 41, 0.3) 100%),
+                  url('https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     }
 
     .hero-content { max-width: 580px; z-index: 2; }
-    .hero-title { font-size: 4.2rem; font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -1px; }
-    .hero-subtitle { font-size: 1.05rem; color: #cbd5e1; margin-bottom: 2.5rem; line-height: 1.6; }
+    .hero-title { font-size: 3.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -1px; }
+    .hero-subtitle { font-size: 1.05rem; color: #cbd5e1; margin-bottom: 2rem; line-height: 1.6; }
     
-    .hero-actions { display: flex; gap: 1rem; align-items: center; }
-    .btn-glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); color: #fff; padding: 0.75rem 1.6rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
-    .btn-glass:hover { background: rgba(255, 255, 255, 0.2); }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .btn-glass { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); color: #fff; padding: 0.7rem 1.4rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+    .btn-glass:hover { background: rgba(255, 255, 255, 0.25); }
 
-    /* FLOATING GLASS CARDS (MATCHING REFERENCE UI) */
+    /* FLOATING OVERLAY CARDS */
     .rating-card {
-      position: absolute; right: 28%; top: 22%;
-      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px);
-      border-radius: 16px; padding: 1.5rem 1.8rem; color: #0f172a;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2); width: 280px; z-index: 3;
+      position: absolute; right: 22%; top: 20%;
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
+      border-radius: 16px; padding: 1.25rem 1.5rem; color: #0f172a;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25); width: 260px; z-index: 3;
     }
-    .rating-avatars { display: flex; gap: -8px; margin-bottom: 0.8rem; }
-    .avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; background: #cbd5e1; }
-    .rating-title { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 0.5rem; line-height: 1.3; }
-    .rating-score { font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; gap: 0.4rem; }
-    .star-icon { color: #f59e0b; font-size: 1.5rem; }
+    .rating-title { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 0.4rem; line-height: 1.3; }
+    .rating-score { font-size: 2rem; font-weight: 800; display: flex; align-items: center; gap: 0.4rem; }
+    .star-icon { color: #f59e0b; font-size: 1.4rem; }
 
     .bottom-widget-left {
-      position: absolute; bottom: 3rem; left: 4rem;
-      background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
-      padding: 1.25rem; display: flex; gap: 1.25rem; align-items: center; width: 340px; z-index: 3;
+      position: absolute; bottom: 3rem; left: 2.5rem;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 16px;
+      padding: 1.25rem; display: flex; gap: 1rem; align-items: center; width: 330px; z-index: 3;
     }
-    .widget-img { width: 90px; height: 70px; border-radius: 10px; object-fit: cover; }
-    .widget-text h4 { font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.5px; }
-    .widget-text h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin: 0.2rem 0 0.4rem; }
-    .widget-text a { font-size: 0.85rem; color: #f97316; text-decoration: none; font-weight: 600; }
+    .widget-img { width: 80px; height: 65px; border-radius: 10px; object-fit: cover; }
+    .widget-text h4 { font-size: 0.7rem; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.5px; }
+    .widget-text h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin: 0.2rem 0 0.3rem; }
+    .widget-text a { font-size: 0.8rem; color: #f97316; text-decoration: none; font-weight: 600; }
 
     .tracking-card-right {
-      position: absolute; bottom: 3rem; right: 4rem;
-      background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
-      padding: 1.5rem; width: 360px; z-index: 3;
+      position: absolute; bottom: 3rem; right: 2.5rem;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 16px;
+      padding: 1.25rem; width: 320px; z-index: 3;
     }
-    .route-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; }
-    .route-line { position: relative; height: 2px; background: rgba(255,255,255,0.2); margin: 1rem 0; }
-    .route-progress { position: absolute; left: 0; top: 0; height: 100%; width: 70%; background: #f97316; }
-    .plane-icon { position: absolute; left: 70%; top: -8px; color: #f97316; font-size: 1.1rem; }
-    .route-times { display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8; }
-    .route-times strong { color: #fff; display: block; margin-top: 0.2rem; }
+    .route-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 1rem; margin-bottom: 0.8rem; }
+    .route-line { position: relative; height: 2px; background: rgba(255,255,255,0.2); margin: 0.8rem 0; }
+    .route-progress { position: absolute; left: 0; top: 0; height: 100%; width: 75%; background: #f97316; }
+    .plane-icon { position: absolute; left: 75%; top: -8px; color: #f97316; font-size: 1rem; }
+    .route-times { display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; }
+    .route-times strong { color: #fff; display: block; margin-top: 0.1rem; }
 
     /* SERVICES SECTION */
-    .services-section { background: #0f172a; padding: 6rem 4rem; }
-    .section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
-    .section-header h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.8rem; }
-    .section-header p { color: #94a3b8; }
+    .services-section { background: #0f172a; padding: 5rem 2.5rem; }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.6rem; }
+    .section-header p { color: #94a3b8; font-size: 0.95rem; }
 
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; max-width: 1200px; margin: 0 auto; }
-    .service-card { background: #1e293b; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .service-card { background: #1e293b; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
     .service-card:hover { transform: translateY(-4px); }
-    .service-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #fff; }
-    .service-card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; color: #fff; }
+    .service-card p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .service-card .btn-orange { width: 100%; border-radius: 8px; margin-top: 1rem; }
 
     /* FOOTER */
-    .site-footer { background: #0b1329; border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 4rem 2rem; color: #94a3b8; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
-    .footer-col h4 { color: #fff; font-size: 1.1rem; margin-bottom: 1.2rem; font-weight: 700; }
-    .footer-col a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.6rem; }
+    .site-footer { background: #0b1329; border-top: 1px solid rgba(255,255,255,0.06); padding: 4rem 2.5rem 2rem; color: #94a3b8; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
+    .footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 1rem; font-weight: 700; }
+    .footer-col a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
     .footer-col a:hover { color: #f97316; }
-    .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; font-size: 0.85rem; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; font-size: 0.85rem; }
 
     /* WHATSAPP FLOAT */
     .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; text-align: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
     /* MODAL */
-    .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; }
+    .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.75); z-index: 2000; justify-content: center; align-items: center; padding: 1rem; }
     .modal.active { display: flex; }
-    .modal-content { background: #1e293b; padding: 2.5rem; border-radius: 16px; width: 100%; max-width: 480px; position: relative; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+    .modal-content { background: #1e293b; padding: 2rem; border-radius: 16px; width: 100%; max-width: 460px; position: relative; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
     .close-btn { position: absolute; top: 1rem; right: 1.25rem; font-size: 1.4rem; cursor: pointer; border: none; background: none; color: #94a3b8; }
-    .form-group { margin-bottom: 1.2rem; }
+    .form-group { margin-bottom: 1rem; }
     .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.85rem; color: #cbd5e1; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.7rem; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.9rem; }
 
+    /* RESPONSIVE BREAKPOINTS */
     @media (max-width: 1024px) {
       .rating-card, .bottom-widget-left, .tracking-card-right { display: none; }
-      .site-header { padding: 1.5rem 2rem; }
-      .hero-container { padding: 8rem 2rem 4rem; }
-      .hero-title { font-size: 2.8rem; }
+      .site-header { padding: 1.2rem 1.5rem; }
+      .hero-container { padding: 7rem 1.5rem 3rem; min-height: 85vh; }
+      .hero-title { font-size: 2.6rem; }
+      .hero-subtitle { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -141,7 +164,7 @@
   <header class="site-header">
     <a href="index.html" class="brand-logo"><span class="logo-accent">thedoc</span>expert<span class="logo-accent">.ae</span></a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link active">Home</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="about.html" class="nav-link">About Us</a>
       <a href="contact.html" class="nav-link">Contact</a>
@@ -149,7 +172,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION WITH UI OVERLAYS -->
+  <!-- HERO SECTION WITH SHIP BACKGROUND -->
   <section class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Global Trade &amp; Logistics Expert</h1>
@@ -160,13 +183,13 @@
       </div>
     </div>
 
-    <!-- FLOATING REVIEW CARD -->
+    <!-- RATING OVERLAY CARD -->
     <div class="rating-card">
       <div class="rating-title">Trusted by JAFZA &amp; UAE trade leaders for operational precision.</div>
       <div class="rating-score">4.9 <span class="star-icon">★</span></div>
     </div>
 
-    <!-- FLOATING UNLOADING CARD -->
+    <!-- BOTTOM WIDGET CARD -->
     <div class="bottom-widget-left">
       <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=300&q=80" class="widget-img" alt="Cargo">
       <div class="widget-text">
@@ -176,7 +199,7 @@
       </div>
     </div>
 
-    <!-- FLOATING TRACKING CARD -->
+    <!-- TRACKING OVERLAY CARD -->
     <div class="tracking-card-right">
       <div class="route-header">
         <span>DXB JAFZA</span>
@@ -207,7 +230,7 @@
           <h3>General Warehousing</h3>
           <p>Secure storage facilities with full inventory tracking and JAFZA free zone access.</p>
         </div>
-        <button class="btn-orange" style="width: 100%; border-radius: 8px;" onclick="openQuoteForm('General Warehousing')">Get a Quote</button>
+        <button class="btn-orange" onclick="openQuoteForm('General Warehousing')">Get a Quote</button>
       </div>
 
       <div class="service-card">
@@ -215,7 +238,7 @@
           <h3>Sea &amp; Air Freight</h3>
           <p>Global sea container transport and expedited air freight forwarding solutions.</p>
         </div>
-        <button class="btn-orange" style="width: 100%; border-radius: 8px;" onclick="openQuoteForm('Sea and Air Freight')">Get a Quote</button>
+        <button class="btn-orange" onclick="openQuoteForm('Sea and Air Freight')">Get a Quote</button>
       </div>
 
       <div class="service-card">
@@ -223,7 +246,7 @@
           <h3>FTA &amp; Customs Clearance</h3>
           <p>Federal Tax Authority filings, customs duty processing, and full trade compliance.</p>
         </div>
-        <button class="btn-orange" style="width: 100%; border-radius: 8px;" onclick="openQuoteForm('FTA Clearance Services')">Get a Quote</button>
+        <button class="btn-orange" onclick="openQuoteForm('FTA Clearance Services')">Get a Quote</button>
       </div>
     </div>
   </section>
@@ -257,8 +280,8 @@
   <div class="modal" id="quoteModal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeQuoteForm()">✕</button>
-      <h2 style="margin-bottom: 0.4rem; font-size: 1.5rem;">Get a Quote</h2>
-      <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.85rem;">Submit your trade or shipping details for an immediate quote.</p>
+      <h2 style="margin-bottom: 0.4rem; font-size: 1.4rem;">Get a Quote</h2>
+      <p style="color: #94a3b8; margin-bottom: 1.2rem; font-size: 0.85rem;">Submit your trade or shipping details for an immediate quote.</p>
       <form onsubmit="event.preventDefault(); alert('Quote Request Sent!'); closeQuoteForm();">
         <div class="form-group">
           <label>Full Name</label>

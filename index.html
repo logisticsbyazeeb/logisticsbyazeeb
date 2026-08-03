@@ -10,7 +10,7 @@
 
     .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
     .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .brand-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; }
+    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; letter-spacing: -0.5px; }
     .logo-accent { color: #38bdf8; }
     .main-nav { display: flex; gap: 2rem; }
     .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 500; }
@@ -59,12 +59,13 @@
 
   <header class="site-header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo"><span class="logo-accent">thedoc</span>expert</a>
+      <a href="index.html" class="brand-logo"><span class="logo-accent">thedoc</span>expert<span class="logo-accent">.ae</span></a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">About</a>
       </nav>
+      <button class="cta-button" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
     </div>
   </header>
 

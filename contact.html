@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | thedocexpert.ae</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #f8fafc; color: #0f172a; line-height: 1.6; overflow-x: hidden; }
+
+    /* PRELOADER */
+    #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0f172a; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.6s ease, visibility 0.6s ease; }
+    .preloader-logo { font-size: 2.2rem; font-weight: 800; color: #ffffff; text-transform: lowercase; letter-spacing: -0.5px; animation: logoPulseBounce 1.5s infinite ease-in-out; }
+    .logo-accent { color: #38bdf8; }
+    .loader-bar { width: 120px; height: 3px; background: rgba(255,255,255,0.1); margin-top: 1.5rem; border-radius: 3px; overflow: hidden; position: relative; }
+    .loader-progress { width: 100%; height: 100%; background: #38bdf8; position: absolute; left: -100%; animation: loadingSlide 2s infinite ease-in-out; }
+
+    @keyframes logoPulseBounce { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-12px) scale(1.05); } }
+    @keyframes loadingSlide { 0% { left: -100%; } 50% { left: 0%; } 100% { left: 100%; } }
+
+    /* HEADER */
+    .site-header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; text-transform: lowercase; letter-spacing: -0.5px; }
+    .main-nav { display: flex; gap: 2rem; }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #38bdf8; }
+    .cta-button { background: #2563eb; color: #fff; padding: 0.65rem 1.3rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; transition: background 0.2s; }
+    .cta-button:hover { background: #1d4ed8; }
+
+    /* PAGE HERO */
+    .page-hero { background: linear-gradient(180deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 5rem 1.5rem; text-align: center; color: #fff; }
+    .page-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .page-hero p { color: #94a3b8; font-size: 1.1rem; }
+
+    /* CONTACT SECTION */
+    .contact-section { max-width: 1100px; margin: 4rem auto; padding: 0 1.5rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    
+    .contact-info-card { background: #fff; border: 1px solid #e2e8f0; padding: 2.5rem; border-radius: 12px; }
+    .contact-info-card h2 { font-size: 1.8rem; color: #0f172a; margin-bottom: 1.5rem; font-weight: 800; }
+    .info-item { margin-bottom: 1.5rem; }
+    .info-item h3 { font-size: 1rem; color: #2563eb; text-transform: uppercase; font-weight: 700; margin-bottom: 0.25rem; }
+    .info-item p, .info-item a { font-size: 1.1rem; color: #0f172a; text-decoration: none; }
+    .info-item a:hover { color: #2563eb; }
+
+    .contact-form-card { background: #fff; border: 1px solid #e2e8f0; padding: 2.5rem; border-radius: 12px; }
+    .contact-form-card h2 { font-size: 1.8rem; color: #0f172a; margin-bottom: 1.5rem; font-weight: 800; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; }
+    .submit-btn { width: 100%; background: #2563eb; color: white; padding: 0.85rem; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+    .submit-btn:hover { background: #1d4ed8; }
+
+    /* FOOTER */
+    .site-footer { background: #0f172a; color: #94a3b8; padding: 4rem 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; }
+    .footer-col p, .footer-col a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; margin-bottom: 0.5rem; display: block; }
+    .footer-col a:hover { color: #38bdf8; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.85rem; color: #64748b; }
+
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .whatsapp-float:hover { background: #128c7e; }
+
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-logo"><span class="logo-accent">thedoc</span>expert<span class="logo-accent">.ae</span></div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo"><span class="logo-accent">thedoc</span>expert<span class="logo-accent">.ae</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <button class="cta-button" onclick="openQuoteForm('General Warehousing')">Request a Quote</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Contact Our Specialists</h1>
+    <p>Reach out directly for custom operational assistance, quotes, or clearance support.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h2>Direct Contact</h2>
+        
+        <div class="info-item">
+          <h3>WhatsApp Support</h3>
+          <p><a href="https://wa.me/971557159767" target="_blank">+971 55 715 9767</a></p>
+        </div>
+
+        <div class="info-item">
+          <h3>Email Address</h3>
+          <p><a href="mailto:azeeb@thedocexpert.ae">azeeb@thedocexpert.ae</a></p>
+        </div>
+
+        <div class="info-item">
+          <h3>Primary Location</h3>
+          <p>Jebel Ali Free Zone (JAFZA)<br>Dubai, United Arab Emirates</p>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h2>Send Us a Message</h2>
+        <form onsubmit="event.preventDefault(); alert('Thank you for contacting us!');">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="name@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Inquiry topic..." required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="How can we assist your business operations?" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>thedocexpert.ae</h4>
+        <p>Precision trade documentation, JAFZA free zone operations, and logistics execution.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/971557159767" target="_blank">+971 55 715 9767</a></p>
+        <p><strong>Email:</strong> <a href="mailto:azeeb@thedocexpert.ae">azeeb@thedocexpert.ae</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Jebel Ali Free Zone (JAFZA)</p>
+        <p>Dubai, United Arab Emirates</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 thedocexpert.ae. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/971557159767" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">&#128172;</a>
+
+  <script>
+    const startTime = Date.now();
+    window.addEventListener('load', () => {
+      const remainingTime = Math.max(0, 3000 - (Date.now() - startTime));
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+      }, remainingTime);
+    });
+  </script>
+</body>
+</html>
